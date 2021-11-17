@@ -62,7 +62,7 @@ async function run() {
             res.send(mybooking);
         });
 
-        // delete api for my booking
+        // delete api 
         app.delete("/mybooking/:id", async (req, res) => {
             const bookingId = req.params.id;
             const query = { _id: ObjectId(bookingId) };
@@ -70,7 +70,7 @@ async function run() {
             res.json(deleteBooking);
         });
 
-        // update api for status
+        // update api 
         app.put("/mybooking/:id", async (req, res) => {
             const updateId = req.params.id;
             const updatedStatus = req.body;
@@ -101,7 +101,7 @@ async function run() {
 }
 run().catch(console.dir);
 
-// important code
+
 app.get("/", (req, res) => {
     res.send("Server Connected");
 });
